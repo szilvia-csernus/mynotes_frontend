@@ -8,10 +8,8 @@ import React, { useState, useEffect, createContext, useCallback } from "react";
 const AuthContext = createContext({
   url: '',
   token: null,
-  // userId: '',
   username: null,
   firstName: '',
-  // isLoggedIn: false,
   login: (token) => {},
   logout: () => {},
 });
@@ -23,7 +21,6 @@ const calculateRemainingTime = (expirationTime) => expirationTime - Date.now();
 const retrieveStoredToken = () => {
   const storedToken = localStorage.getItem("token");
   const storedExpirationDate = localStorage.getItem("expirationTime");
-  // const storedUserId = localStorage.getItem('userId');
   const storedUsername = localStorage.getItem("username");
   const storedFirstName = localStorage.getItem('firstName');
 
@@ -32,7 +29,6 @@ const retrieveStoredToken = () => {
   if (remainingTime <= 0) {
     localStorage.removeItem("token");
     localStorage.removeItem("expirationTime");
-    // localStorage.removeItem('userId');
     localStorage.removeItem("username");
     localStorage.removeItem('firstName');
     return null;
@@ -41,7 +37,6 @@ const retrieveStoredToken = () => {
   return {
     token: storedToken,
     duration: remainingTime,
-    // userId: storedUserId,
     username: storedUsername,
     firstName: storedFirstName
   };
@@ -51,18 +46,15 @@ const retrieveStoredToken = () => {
 export const AuthContextProvider = (props) => {
   const localStorageData = retrieveStoredToken();
   let initialToken;
-  // let initialUserId;
   let initialUsername;
   let initialFirstName;
   if (localStorageData) {
     initialToken = localStorageData.token;
-    // initialUserId = localStorage.userId;
     initialUsername = localStorageData.username;
     initialFirstName = localStorage.firstName;
   }
 
   const [token, setToken] = useState(initialToken);
-  // const [userId, setUserId] = useState(initialUserId);
   const [username, setUsername] = useState(initialUsername);
   const [firstName, setFirstName] = useState(initialFirstName);
 
@@ -70,7 +62,6 @@ export const AuthContextProvider = (props) => {
     setToken(null);
     localStorage.removeItem("token");
     localStorage.removeItem("expirationTime");
-    // localStorage.removeItem('userId');
     localStorage.removeItem("username");
     localStorage.removeItem('firstName');
 
@@ -81,14 +72,12 @@ export const AuthContextProvider = (props) => {
 
   const loginHandler = (token, username, firstName) => {
     setToken(token);
-    // setUserId(userId)
     setUsername(username);
     setFirstName(firstName)
 
     const expiresAt = Date.now() + 3600000 // stay logged in for 1 hour
     localStorage.setItem("token", token);
     localStorage.setItem("expirationTime", expiresAt);
-    // localStorage.setItem('userId', userId);
     localStorage.setItem("username", username);
     localStorage.setItem('firstName', firstName)
 
@@ -108,7 +97,6 @@ export const AuthContextProvider = (props) => {
     url: "http://localhost:4000",
     // url: "http://notes-rails7.herokuapp.com",
     token: token,
-    // userId,
     username,
     firstName,
     login: loginHandler,
