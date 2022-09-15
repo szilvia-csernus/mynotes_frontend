@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+
+import Layout from "./components/Layout";
+// import AllNotes from './components/AllNotes';
+import AuthPage from "./pages/AuthPage";
+import Dashboard from "./pages/Dashboard";
+import HomePage from "./pages/HomePage";
+import NewNote from "./pages/NewNote";
+import Note from "./pages/Note";
+import NotFound from "./pages/NotFound";
+import { useContext } from "react";
+import AuthContext from "./store/auth-context";
+import EditNote from "./pages/EditNote";
 
 function App() {
+  const ctx = useContext(AuthContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Routes>
+        <Route path="/" exact element={<HomePage />} />
+        <Route path="/auth/:form" element={<AuthPage />} />
+        {ctx.token && (<>
+          <Route path="/dashboard" element={<Dashboard />}/>
+          <Route path="/new-note" element={<NewNote />} />
+          <Route path="/:noteId" element={<Note />} />
+          <Route path="/:noteId/edit" element={<EditNote />} />
+        </>    
+        )}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Layout>
   );
 }
 

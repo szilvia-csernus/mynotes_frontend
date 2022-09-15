@@ -1,13 +1,102 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  color: inherit;
+  background: transparent;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  font-weight: bold;
 }
+
+h3 {
+  font-weight: bolder;
+  padding: .5rem 0;
+}
+
+ul {
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #d6d6d6;
+}
+
+main {
+  width: 100%;
+  height: auto;
+  padding: 0 10%;
+}
+
+.board {
+  margin: .5rem 0;
+}
+
+
+.centered {
+  margin: 3rem auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.focused {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: white;
+  color: #7a0144;
+  border-radius: 4px;
+  padding: 0.35rem 1.5rem;
+  border: 1px solid #7a0144;
+  cursor: pointer;
+  margin: .7rem 0 0;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #9c095a;
+  border-color: #9c095a;
+  color: white;
+}
+
+.btn--flat {
+  cursor: pointer;
+  font: inherit;
+  color: rgb(0, 93, 93);
+  border: none;
+  background-color: none;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+}
+
+.btn--flat:hover,
+.btn--flat:active {
+  background-color: rgb(0, 93, 93);
+  color: white;
+}
+

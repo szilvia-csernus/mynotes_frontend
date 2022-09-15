@@ -1,0 +1,38 @@
+.notes {
+    margin: .5rem 0
+}
+
+.notes a:hover {
+    color: rgb(0, 74, 74);
+}
+
+.date {
+    text-align: end;
+    font-style: italic;
+    font-size: .9rem;
+}
+
+.edit {
+    text-align: end;
+    font-style: italic;
+    font-size: .9rem;
+    line-height: 1.5rem;
+    color:rgb(0, 74, 74)
+}
+
+.delete {
+    text-align: end;
+    font-style: italic;
+    font-size: .9rem;
+    line-height: 1rem;
+    color:crimson;
+    cursor: pointer;
+}
+
+.noNotes {
+    margin-top: 1rem;
+}
+
+/* .active {
+    color: rgb(0, 93, 93);
+} */
