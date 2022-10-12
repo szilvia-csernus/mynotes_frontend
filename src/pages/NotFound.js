@@ -1,8 +1,9 @@
 import React from 'react'
+import Card from '../UI/Card'
 
 const NotFound = () => {
   return (
-    <div className='centered'>Not Found</div>
+    <Card className='centered'>Not Found</Card>
   )
 }
 

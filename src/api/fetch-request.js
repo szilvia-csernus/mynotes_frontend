@@ -11,7 +11,7 @@ export const fetchRequest = async (full_url, token, params, method) => {
   }
   const response = await fetch(full_url, options);
   if (!response.ok) {
-    throw new Error(response.message || "Something went wrong.");
+    throw new Error(response.error || "Something went wrong.");
   }
   const data = await response.json();
 

@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
-import classes from './Form.module.css';
-import { createNote } from '../api/note-apis';
-import AuthContext from '../store/auth-context';
 import { useNavigate } from 'react-router-dom';
+import { createNote } from '../../api/note-apis';
+import AuthContext from '../../store/auth-context';
+import classes from '../Form.module.css';
+
 
 const NoteForm = () => {
   
@@ -13,18 +14,18 @@ const NoteForm = () => {
 
     const submitFormHandler = e => {
         e.preventDefault();
-          createNote(ctx.url, ctx.token, {
-            title: currentTitle,
-            body: currentBody,
-          })
-          .then((data) => {
-            console.log(data);
-            navigate(`/${data.id}`);
-          })
-          .catch((err) => {
-            console.log(err);
-            navigate("/new-note");
-          });
+          createNote(ctx.url, ctx.token, ctx.userId, {
+						title: currentTitle,
+						body: currentBody,
+					})
+						.then((data) => {
+							console.log(data);
+							navigate(`/${data.id}`);
+						})
+						.catch((err) => {
+							console.log(err);
+							navigate('/new-note');
+						});
         }
     
   

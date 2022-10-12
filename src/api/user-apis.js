@@ -1,6 +1,6 @@
 import { fetchRequest } from './fetch-request';
 
-export const createUser = async (url, userData) => {
+export const signupUser = async (url, userData) => {
 	const full_url = `${url}/users/`;
 	return await fetchRequest(
 		full_url,
@@ -20,23 +20,26 @@ export const loginUser = async (url, userData) => {
 	);
 };
 
-export const updateUser = async (url, userData, token) => {
-	loginUser(url, {username: userData.username, password: userData.password}).then(data => {
-		const full_url = `${url}/user`;
-		return fetchRequest(
-			full_url,
-			token,
-			{
-				id: data.user.id,
-				user: {
-					username: userData.username,
-					password: userData.newPassword,
-				},
-			},
-			'PATCH'
-		);
-	}
-		
-	)
+export const updateUser = async (url, userData) => {
+	const response = await loginUser(url, {username: userData.username, password: userData.password})
 	
-};
+	console.log(response);
+	if (!response.ok) {
+		throw new Error(response.error || 'Something went wrong.');
+	}
+	const full_url = `${url}/user`;
+	
+	return await fetchRequest(
+		full_url,
+		response.token,
+		{
+			id: response.user.id,
+			user: {
+				username: userData.username,
+				password: userData.newPassword,
+			},
+		},
+		'PATCH'
+	);
+}
+	

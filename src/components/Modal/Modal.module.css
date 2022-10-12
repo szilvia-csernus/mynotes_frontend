@@ -9,11 +9,11 @@
 }
 
 .overlay {
-    position: fixed;
-    top: 30vh;
-    left: 10%;
-    width: 80%;
-    max-width: 400px;
+    position: relative;
+    top: 20vh;
+    margin: auto;
+    /* width: 80%; */
+    max-width: 500px;
     z-index: 11;
     animation: slide-down 600ms ease-out forwards;
 }

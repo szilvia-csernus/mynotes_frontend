@@ -5,7 +5,7 @@ import { deleteNote, getNote } from '../api/note-apis';
 import AuthContext from '../store/auth-context';
 import LoadingSpinner from '../UI/LoadingSpinner';
 import { dateString } from '../UI/utils'
-import classes from '../components/Notes.module.css'
+import classes from '../components/Notes/Notes.module.css'
 
 
 function Note() {
@@ -16,7 +16,6 @@ function Note() {
   const token = ctx.token;
   const [ note, setNote ] = useState({});
   const [ isLoading, setIsLoading ] = useState(true);
-  
 
   useEffect(() => {
     setIsLoading(true)

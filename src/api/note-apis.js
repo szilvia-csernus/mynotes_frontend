@@ -15,8 +15,8 @@ export const deleteNote = async (url, token, note_id) => {
   return await deleteRequest( full_url, token);
 };
 
-export const createNote = async (url, token, note_params) => {
-  const full_url = `${url}/notes/`;
+export const createNote = async (url, token, user_id, note_params) => {
+  const full_url = `${url}/users/${user_id}/notes`;
   return await fetchRequest( full_url, token, note_params, "POST" );
 };
 

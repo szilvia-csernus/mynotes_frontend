@@ -1,7 +1,7 @@
-import { Link, NavLink } from "react-router-dom";
-import Card from "../UI/Card";
+import { Link } from "react-router-dom";
+import Card from "../../UI/Card";
 import classes from "./Notes.module.css";
-import { dateString } from "../UI/utils";
+import { dateString } from "../../UI/utils";
 
 const AllNotes = (props) => {
   return (
@@ -13,14 +13,11 @@ const AllNotes = (props) => {
         {props.notes.map((note) => (
           <li key={note.id}>
             <Card>
-              <NavLink
+              <Link
                 to={`/${note.id}`}
-                // className={(navData) =>
-                //   navData.isActive ? classes.active : undefined
-                // }
               >
                 <h3>{note.title}</h3>
-              </NavLink>
+              </Link>
               <p>
                 {note.body.length > 19
                   ? `${note.body.slice(0, 20)} ...`

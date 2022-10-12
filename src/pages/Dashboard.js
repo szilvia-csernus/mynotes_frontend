@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import AllNotes from "../components/AllNotes";
+import AllNotes from "../components/Notes/AllNotes";
 import LoadingSpinner from "../UI/LoadingSpinner";
 import AuthContext from "../store/auth-context";
 import { fetchUserNotes } from "../api/note-apis";
