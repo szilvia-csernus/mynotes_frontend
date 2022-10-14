@@ -2,7 +2,7 @@
   width: 100%;
   height: auto;
   margin: auto;
-  padding: 1.5rem 10%;
+  padding: 1.3rem 10%;
   background-color: rgb(0, 74, 79);
 }
 
@@ -11,28 +11,34 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  line-height: 1.5rem;
 }
 
 .logo {
   font-size: 2rem;
   color: white;
+  line-height: 2rem;
 }
 
 .nav ul {
   display: flex;
+  
 }
 
 .nav li {
   margin-left: 1.5rem;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
+  font-weight: 400;
+  text-align: center;
 }
 
 .nav li:last-of-type {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .nav a {
   display: block;
+  
   padding: .5rem;
   text-decoration: none;
   color: #99caca;
@@ -45,7 +51,7 @@
 }
 
 .logout:hover {
-  color: rgb(137, 13, 38)
+  color: rgb(214, 60, 91);
 }
 
 .nav a:hover,

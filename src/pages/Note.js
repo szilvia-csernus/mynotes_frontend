@@ -35,11 +35,9 @@ function Note() {
   const deleteNoteHandler = () => {
     deleteNote(url, token, noteId)
       .then((data) => {
-        console.log(data);
         navigate("/dashboard");
       })
       .catch((err) => {
-        console.log(err);
       });
   }
 

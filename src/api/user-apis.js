@@ -23,7 +23,6 @@ export const loginUser = async (url, userData) => {
 export const updateUser = async (url, userData) => {
 	const response = await loginUser(url, {username: userData.username, password: userData.password})
 	
-	console.log(response);
 	if (!response.ok) {
 		throw new Error(response.error || 'Something went wrong.');
 	}

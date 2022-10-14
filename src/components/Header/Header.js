@@ -16,7 +16,7 @@ const Header = () => {
 		<header className={classes.header}>
 			<div className={classes.frame}>
 				<h1 className={classes.logo}>
-					<Link to={'/'}>{ctx.token ? `${ctx.firstName}'s ` : 'My '} notes</Link>
+					<Link to={'/'}>{ctx.token ? `${ctx.firstName}'s ` : 'my '} notes</Link>
 				</h1>
 				<nav className={classes.nav}>
 					<ul>
@@ -29,7 +29,7 @@ const Header = () => {
 											navData.isActive ? classes.active : undefined
 										}
 									>
-										All Notes
+										all notes
 									</NavLink>
 								</li>
 								<li>
@@ -39,7 +39,7 @@ const Header = () => {
 											navData.isActive ? classes.active : undefined
 										}
 									>
-										New Note
+										new note
 									</NavLink>
 								</li>
 								<li>
@@ -49,11 +49,11 @@ const Header = () => {
 											navData.isActive ? classes.active : undefined
 										}
 									>
-										Change Password
+										change password
 									</NavLink>
 								</li>
 								<li className={classes.logout} onClick={onLogOut}>
-									Sign Out
+									sign out
 								</li>
 							</>
 						)}

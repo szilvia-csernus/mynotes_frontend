@@ -104,8 +104,8 @@ export const AuthContextProvider = (props) => {
   }, [localStorageData, logoutHandler]);
 
   const contextValue = {
-		// url: "http://localhost:4000",
-		url: 'https://my-notes-rails7.herokuapp.com',
+		url: "http://localhost:4000",
+		// url: 'https://my-notes-rails7.herokuapp.com',
 		token,
 		userId,
 		username,

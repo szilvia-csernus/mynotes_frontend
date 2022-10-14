@@ -19,11 +19,9 @@ const NoteForm = () => {
 						body: currentBody,
 					})
 						.then((data) => {
-							console.log(data);
 							navigate(`/${data.id}`);
 						})
 						.catch((err) => {
-							console.log(err);
 							navigate('/new-note');
 						});
         }

@@ -99,8 +99,6 @@ those cases in distinct components. */
 
 // 		actionFunction(ctx.url, userData)
 // 			.then((data) => {
-// 				console.log(userData);
-// 				console.log(data);
 // 				if (data.error) {
 // 					ctx.logout();
 // 					navigate('/auth/login');

@@ -16,6 +16,7 @@
     text-align: end;
     font-style: italic;
     font-size: .9rem;
+    font-weight: 600;
     line-height: 1.5rem;
     color:rgb(0, 74, 74)
 }
@@ -24,6 +25,7 @@
     text-align: end;
     font-style: italic;
     font-size: .9rem;
+    font-weight: 600;
     line-height: 1rem;
     color:crimson;
     cursor: pointer;
@@ -32,7 +34,3 @@
 .noNotes {
     margin-top: 1rem;
 }
-
-/* .active {
-    color: rgb(0, 93, 93);
-} */

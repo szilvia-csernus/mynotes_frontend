@@ -23,7 +23,6 @@ const Dashboard = () => {
           transformedNotes.push(data[key]);
         }
         setNotes(transformedNotes);
-        console.log("notes", transformedNotes);
         setIsLoading(false);
       }
     });
@@ -39,7 +38,7 @@ const Dashboard = () => {
       {!isLoading && (
         <>
           <button className="btn" onClick={newNoteHandler}>
-            New Note
+            new note
           </button>
           <AllNotes notes={notes} />
         </>
