@@ -11,6 +11,7 @@ export const signupUser = async (url, userData) => {
 };
 
 export const loginUser = async (url, userData) => {
+
 	const full_url = `${url}/login`;
 	return await fetchRequest(
 		full_url,
@@ -23,12 +24,9 @@ export const loginUser = async (url, userData) => {
 export const updateUser = async (url, userData) => {
 	const response = await loginUser(url, {username: userData.username, password: userData.password})
 	
-	if (!response.ok) {
-		throw new Error(response.error || 'Something went wrong.');
-	}
 	const full_url = `${url}/user`;
 	
-	return await fetchRequest(
+	const updateResponse = await fetchRequest(
 		full_url,
 		response.token,
 		{
@@ -36,9 +34,11 @@ export const updateUser = async (url, userData) => {
 			user: {
 				username: userData.username,
 				password: userData.newPassword,
-			},
+			}
 		},
 		'PATCH'
 	);
+
+	return updateResponse
 }
 	

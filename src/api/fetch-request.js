@@ -11,10 +11,10 @@ export const fetchRequest = async (full_url, token, params, method) => {
   }
   const response = await fetch(full_url, options);
   if (!response.ok) {
-    throw new Error(response.error || "Something went wrong.");
+    throw new Error(response.error || "Something went wrong in fetch request.");
   }
   const data = await response.json();
-
+	console.log(data);
   return data;
 };
 

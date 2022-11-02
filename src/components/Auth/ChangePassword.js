@@ -47,9 +47,9 @@ const ChangePassword = () => {
 		updateUser(ctx.url, userData)
 			.then((data) => {
 				if (data.error) {
-					ctx.logout();
-					navigate('/auth/login');
-					alert(data.error);
+					// ctx.logout();
+					// navigate('/auth/login');
+					// alert(data.error);
 				} else {
 					ctx.login(
 						data.token,
